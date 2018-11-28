@@ -8,6 +8,11 @@ get ('/') do
   erb(:list)
 end
 
+get('/items/:id') do
+  @item = Item.find(params[:id])
+  erb(:item)
+end
+
 post ('/') do
   name = params["name"]
   item = Item.new(name)
